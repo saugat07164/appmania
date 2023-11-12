@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Journal</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=FontName" rel="stylesheet">
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/brython@3.12.0/brython.min.js">
+    </script>
+    {% block extra_css %}
+    {% endblock %}
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/brython@3.12.0/brython_stdlib.js">
+    </script>
+   
+  </head>
+  <body>
+    <div class="container">
+    <div id="row1" class="row">
+        <div class="header">
+            <div class="logo">
+                
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home_view' %}">Home</a></li>
+                    <li><a href="{% url 'add_view' %}">Add Post</a></li>
+                    <li><a href="{% url 'add_view' %}">Store</a></li>
+
+                    <!--<li><a href="#">View Link</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">Income Statement</a></li>
+                            <li><a href="#">Balance Sheet</a></li>
+                            <li><a href="#">Invoices</a></li>
+                            <li><a href="#">Stock Report</a></li>
+                        </ul> 
+                    </li>-->
+                    
+                </ul>
+            </nav>
+            <div class="btnwrap">
+            <button id="button">&#9776;</button>
+            </div>
+    </div>
+</div>
+<div id="row2" class="row">
+    <div class="content">
+        {% block content %}
+
+{% endblock %}
+  
+    </div>
+   
+    <div id="zone" class="sidebar">
+        sidebar
+        <br>
+        <hr>
+        {% block sidebar %}
+        {% endblock %}
+    </div>
+</div>
+<div id="row3" class="row">
+    <div class="footer">
+        <p>Journal &copy 2023</p>
+    </div>
+</div>
+    </div>
+
+    <script type="text/python" id="script3">
+        from browser import document, bind
+
+        @bind("#button", "click")
+        def change(event):
+            sidebar = document.select(".sidebar")[0]
+            content = document.select(".content")[0]
+            button = document.select("#button")[0]
+        
+            if sidebar.style.display == "none" or sidebar.style.display == "":
+                sidebar.style.display = "block"
+                content.style.width = "calc(100% - 200px)"  # Adjust width as needed based on sidebar width
+                button.text = "✕"  # Change to "X" when sidebar is open
+            else:
+                sidebar.style.display = "none"
+                content.style.width = "100%"
+                button.text = "☰"  # Change back to hamburger icon when sidebar is closed
+        
+    </script>
+
+</body>
+</html>

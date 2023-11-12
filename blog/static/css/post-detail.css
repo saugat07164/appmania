@@ -1,0 +1,35 @@
+/* Add styling for the paper-like container */
+.paper-container {
+    background-color: #c2ac8a;
+    border: 1px solid #ccc;
+    border-radius: 18px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    min-width: 90%;
+    text-align: left;
+  }
+  .icon {
+    width: 150px;    /* Set the width of the container div */
+    height: 150px;   /* Set the height of the container div */
+    overflow: hidden; /* Hide any overflowing content */
+  
+    /* Apply the object-fit property to the contained image */
+  }
+  
+  .icon img {
+    width: 100%;     /* Ensure the image takes the full width of the div */
+    height: 100%;    /* Ensure the image takes the full height of the div */
+    object-fit: cover; /* Resize the image to cover the entire container */
+  }
+  /* You can customize the styles above to match your design preferences */
+  .post-content{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: justify;
+  }
+  .tagicon{
+    height: 40px;
+    width: 40px;
+    background-image: url('/static/images/R1.png');
+    background-size: cover;
+  }

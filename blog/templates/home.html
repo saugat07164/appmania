@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+{% block sidebar %}
+<p><a href="{% url 'mon_view'%}">Money Manager</a></p>
+{% endblock %}
+{% block content %}
+<p class="sexy-title">Articles</p>
+<div class="post-card-container">
+  {% for post in object_list %}
+  <a class="post-card-link" href="{% url 'post_detail' post.id %}">
+    <div class="post-card">
+      <img src="{{ post.image.url }}">
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.content|safe|slice:":30"|default_if_none:""}}{% if post.content|length > 30 %}...{% endif %}</p>
+
+
+    </div>
+  </a>
+  {% endfor %}
+</div>
+
+
+
+  <script type="text/javascript">
+    document.querySelectorAll("#copybtn").forEach(function(button) {
+        button.addEventListener("click", function() {
+            const url = button.getAttribute("data-url");
+            copyToClipboard(url);
+        });
+    });
+
+    function copyToClipboard(text) {
+        if (!navigator.clipboard) {
+            alert("Clipboard API not available in this browser.");
+            return;
+        }
+
+        navigator.clipboard.writeText(text).then(function() {
+            alert("URL copied to clipboard");
+        }).catch(function(err) {
+            alert("Copy failed: " + err);
+        });
+    }
+  </script>
+{% endblock %}

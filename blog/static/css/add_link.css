@@ -1,0 +1,81 @@
+@font-face {
+    font-family: 'Genos';
+    src: url('https://fonts.gstatic.com/s/genos/v5/o-0O_tL0-NO4AwST9z4bZA.eot');
+    src: url('https://fonts.gstatic.com/s/genos/v5/o-0O_tL0-NO4AwST9z4bZA.eot?#iefix') format('embedded-opentype'),
+         url('https://fonts.gstatic.com/s/genos/v5/o-0O_tL0-NO4AwST9z4bZA.woff2') format('woff2'),
+         url('https://fonts.gstatic.com/s/genos/v5/o-0O_tL0-NO4AwST9z4bZA.woff') format('woff'),
+         url('https://fonts.gstatic.com/s/genos/v5/o-0O_tL0-NO4AwST9z4bZA.ttf') format('truetype');
+}
+
+/* Style the form container */
+form {
+    width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+.masked-text {
+color:beige;
+text-decoration: none;
+}
+
+.sexy-title {
+    color: rgba(15, 15, 13, 0.808);
+    font-family: 'Genos', sans-serif;
+    font-size: 35px;
+    text-shadow: 0 0 10px rgba(177, 219, 230, 0.8); /* Adjust the shadow size and color as needed */
+}
+
+
+
+/* Style form labels */
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Style text inputs */
+input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Style the submit button */
+button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Style the "Back" link */
+a {
+    display: block;
+    margin-top: 10px;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+/* Style form errors */
+.errorlist {
+    color: red;
+    margin: 0;
+}
+.content{
+    width: 100%;
+    padding: 20px;
+   
+ 
+    display:flex;
+    text-align: center;
+    flex-direction: column!important;
+  
+}

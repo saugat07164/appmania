@@ -1,0 +1,20 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/add_link.css' %}">
+{% endblock %}
+
+{% block content %}
+  <h2>Add a Tag</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Tag</button>
+    <br><br>
+    <hr>
+    <a href="{% url 'home_view' %}">Back to Home Page</a>
+  </form>
+  
+{% endblock %}

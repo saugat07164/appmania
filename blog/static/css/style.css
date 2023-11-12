@@ -1,0 +1,233 @@
+@font-face {
+  font-family: 'Genos';
+  src: url('https://fonts.gstatic.com/s/genos/v5/o-0O_tL0-NO4AwST9z4bZA.eot');
+  src: url('https://fonts.gstatic.com/s/genos/v5/o-0O_tL0-NO4AwST9z4bZA.eot?#iefix') format('embedded-opentype'),
+       url('https://fonts.gstatic.com/s/genos/v5/o-0O_tL0-NO4AwST9z4bZA.woff2') format('woff2'),
+       url('https://fonts.gstatic.com/s/genos/v5/o-0O_tL0-NO4AwST9z4bZA.woff') format('woff'),
+       url('https://fonts.gstatic.com/s/genos/v5/o-0O_tL0-NO4AwST9z4bZA.ttf') format('truetype');
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url('/static/images/c\ \(2\).jpg');
+    background-repeat:no-repeat;
+    background-size: cover; 
+  
+}
+.container{
+  margin-bottom: 140px;
+}
+.container p{
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-weight: bold;
+
+}
+.logo {
+
+  background-image: url("{% static 'images/R.png' %}");
+  background-size: cover;
+  background-position: center;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+  }
+  
+  nav ul li {
+    list-style-type: none;
+    position: relative; /* Add this line to create a stacking context for sub-menu positioning */
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    transition: color 0.2s ease-out, background-color 0.2s ease-out;
+    color: rgb(83, 244, 255);
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: none;
+  }
+  
+  nav ul li a:hover {
+    color: rgb(255, 255, 255);
+    background-color: black;
+  }
+  
+  /* Style the sub-menu */
+  nav ul li:hover .sub-menu {
+    display: block;
+  }
+  
+  .sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    min-width: 180px;
+  }
+  
+  .sub-menu li {
+    list-style-type: none;
+  }
+  
+  .sub-menu a {
+    text-decoration: none;
+    color: rgb(82, 10, 10);
+    font-weight: bold;
+    font-size: 16px;
+    display: block;
+    padding: 8px 8px;
+  }
+  
+  .sub-menu a:hover {
+    color: rgb(255, 255, 255);
+    background-color: black;
+    min-width: 180px;
+  }
+  
+  .header {
+    background-image: url('/static/images/back2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 5em;
+    padding: 16px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-position: center 30%; /* Adjust the vertical position here */
+    box-shadow: 0 5px 8px 4px;
+ }
+ 
+#row2{
+    display:flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 20px;
+}
+.content{
+    width: 100%;
+    padding: 20px;
+    display:flex;
+    text-align: center;
+    flex-direction: row;
+    flex-wrap:wrap;
+    gap: 30px;
+   
+  
+}
+.sidebar{
+    width: 20%;
+    height: 100%;
+    padding: 20px;
+    display:none;
+    border:1px outset rgb(255, 255, 255);
+    border-radius: 10px;
+    background-color: rgba(37, 7, 71, 0.2);
+    color: rgb(218, 198, 191);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.3);
+  
+}
+.sidebar a{
+  text-decoration: none;
+  color: black;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 4em;
+  background-color: grey;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+  
+  /* Style the button that is used to open the sidepanel */
+  #button {
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: azure;
+    color:black;
+    transition: background-color, color 0.1s ease-in;
+  }
+  #button:hover{
+    background-color: grey;
+    color: white;
+  }
+  .btnwrap{
+padding: 30px;
+
+  }
+
+ 
+/* Style the form container */
+form {
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: left;
+}
+
+/* Style form labels */
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Style text inputs */
+input[type="text"], textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Style the submit button */
+button {
+  background-color: #007BFF;
+  border-radius: 20px;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Style the "Back" link */
+a {
+  display: block;
+  margin-top: 10px;
+  color: #007BFF;
+  text-decoration: none;
+}
+
+/* Style form errors */
+.errorlist {
+  color: red;
+  margin: 0;
+}

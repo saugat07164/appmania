@@ -1,0 +1,1 @@
+asgiref==3.7.2Djangodjango-ckeditor==6.3.2django-js-assetPillowsqlparse==0.4.4tzdata==2023.3

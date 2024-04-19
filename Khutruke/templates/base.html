@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -88,3 +89,91 @@
 </body>
 
 </html>
+=======
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>खुत्रुके</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap/css/bootstrap-grid.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap/css/bootstrap-reboot.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="{% static 'css/manual/extras.css' %}" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-brand" id="logodiv">
+            <img src="{% static 'images/logo.png' %}" alt="">
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- Logo or Brand -->
+           
+            <!-- Navbar Links -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home_view' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <form method="post" action="{% url 'logout' %}" class="nav-link">
+                        {% csrf_token %}
+                        <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Logout</button>
+                    </form>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    
+    
+
+    <!-- Sidebar -->
+    <div class="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="bg-white h-full w-64 p-4">
+            <!-- Sidebar Content Goes Here -->
+        </div>
+    </div>
+
+    <!-- Page Content -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- Example Content Divs -->
+        <div class="bg-white shadow-md p-6 mb-4">
+           {% block content %}
+           {% endblock %}
+        </div>
+    </div>
+
+    <!-- JavaScript for Toggle Sidebar -->
+  <script>
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+
+    navbarToggler.addEventListener('click', () => {
+        navbarCollapse.classList.toggle('show');
+    });
+</script>
+
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
+>>>>>>> 56e8ba141c7ecebe8811d153cbf7b97be881f469

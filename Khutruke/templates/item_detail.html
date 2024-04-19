@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'base.html' %}
 
 {% block content %}
@@ -244,3 +245,50 @@ setInterval(function() {
 
 
 {% endblock %}
+=======
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="overflow-x-auto">
+    <h1>{{ item.name }} Details</h1>
+    
+    <table class="table-auto border border-collapse border-gray-400">
+        <thead>
+            <tr>
+                <th class="px-4 py-2 bg-gray-200 border">Name</th>
+                <th class="px-4 py-2 bg-gray-200 border">Picture</th>
+                <th class="px-4 py-2 bg-gray-200 border">Description</th>
+                <th class="px-4 py-2 bg-gray-200 border">Price</th>
+                <th class="px-4 py-2 bg-gray-200 border">Deposit</th>
+                <th class="px-4 py-2 bg-gray-200 border">Interest Rate</th>
+                <th class="px-4 py-2 bg-gray-200 border">Acquired</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="px-4 py-2 border">{{ item.name }}</td>
+                <td class="px-4 py-2 border">
+                    <img src="{{ item.picture.url }}" alt="{{ item.name }}" width="100">
+                </td>
+                <td class="px-4 py-2 border">{{ item.description }}</td>
+                <td class="px-4 py-2 border">{{ item.price }}</td>
+                <td class="px-4 py-2 border">{{ item.deposit }}</td>
+                <td class="px-4 py-2 border">{{ item.interest_rate }}</td>
+                <td class="px-4 py-2 border">
+  {% if item.acquired %}
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd" d="M0 11l2-2 5 5L18 3l2 2L7 18z" clip-rule="evenodd" />
+    </svg> <!-- Tailwind tick icon -->
+  {% else %}
+   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="none">
+      <path stroke="currentColor" stroke-width="2" d="M6 6 14 14M6 14 14 6"/>
+    </svg> <!-- Tailwind cross icon -->
+  {% endif %}
+</td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+>>>>>>> 56e8ba141c7ecebe8811d153cbf7b97be881f469

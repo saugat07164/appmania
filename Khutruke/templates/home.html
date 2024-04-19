@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- templates/child_page.html -->
 {% extends 'base.html' %}
 
@@ -18,3 +19,29 @@
 
 
 {% endblock %}
+=======
+<!-- templates/child_page.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    <table class="table-auto border border-collapse border-gray-400">
+        <thead>
+            <tr>
+                <th class="px-4 py-2 bg-gray-200 border">S.N.</th>
+                <th class="px-4 py-2 bg-gray-200 border">Apps</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="px-4 py-2 border">1</td>
+                <td class="px-4 py-2 border"><a href="{% url 'item-list' %}">Khutruke</a></td>
+            </tr>
+           
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+    
+</div>
+{% endblock %}
+>>>>>>> 56e8ba141c7ecebe8811d153cbf7b97be881f469

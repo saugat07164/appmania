@@ -1,0 +1,20 @@
+<!-- templates/child_page.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row "  >
+      <div class="col-6 col-md-4 col-lg-3" id="homeicons">
+        <a href="{% url 'item-list' %}" class="border rounded-lg p-2 hover:bg-gray-100 transition duration-300 ease-in-out d-flex flex-column justify-content-center align-items-center">
+          <img src="/static/images/app_icons/piggy-bank.gif" alt="" class="w-50 h-auto mb-2"> <!-- Adjust the width as needed -->
+          <p class="font-semibold">खुत्रुके</p>
+          <p class="text-sm text-gray-600">पैसा खुत्रुक्क, सामान टुप्लुक्क</p>
+        </a>
+      </div>
+      <!-- Add more columns for additional icons -->
+    </div>
+  </div>
+  
+
+
+{% endblock %}

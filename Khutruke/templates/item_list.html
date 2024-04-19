@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="flex flex-col gap-1 overflow-x-auto">
+
+
+
+
+</div>
+<div class="overflow-x-auto">
+  <p class="font-bold text-2xl text-justify">Wish List</p>  
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="homeicons">
+        {% for item in items %}
+        <a href="{% url 'item-detail' pk=item.pk %}" class="border rounded-lg p-4 hover:bg-gray-100 transition duration-300 ease-in-out">
+            <img src="{{ item.picture.url }}" alt="{{ item.name }}" class="w-full h-32 object-cover mb-2">
+            <p class="font-semibold">{{ item.name }}</p>
+            <p class="text-sm text-gray-600">{{ item.details }}</p>
+            <p class="text-sm text-gray-600">Progress: {{ item.progress_percentage|floatformat:2 }}%</p>
+            <div class="progress mt-2">
+                <div class="progress-bar" role="progressbar" style="width: {{ item.progress_percentage }}%;" aria-valuenow="{{ item.total_deposit }}" aria-valuemin="0" aria-valuemax="{{ item.price }}"></div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+
+</div>
+</div>
+
+
+
+
+
+<div class="flex flex-col gap-5">
+  <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Add Item
+  </a>
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body">
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="grid grid-cols-1 gap-6">
+          <label for="name" class="block">
+            <span class="text-gray-700">Name</span>
+            <input type="text" id="name" name="name" class="form-input mt-1 block w-full" placeholder="Enter the name" required>
+          </label>
+
+          <label for="picture" class="block">
+            <span class="text-gray-700">Picture</span>
+            <input type="file" id="picture" name="picture" class="form-input mt-1 block w-full" accept="image/*" required>
+          </label>
+
+          <label for="description" class="block">
+            <span class="text-gray-700">Description</span>
+            <textarea id="description" name="description" class="form-textarea mt-1 block w-full" placeholder="Enter the description" required></textarea>
+          </label>
+
+          <label for="price" class="block">
+            <span class="text-gray-700">Price</span>
+            <input type="number" id="price" name="price" class="form-input mt-1 block w-full" placeholder="Enter the price" required>
+          </label>
+
+          <label for="deposit" class="block">
+            <span class="text-gray-700">Deposit</span>
+            <input type="number" id="deposit" name="deposit" class="form-input mt-1 block w-full" placeholder="Enter the deposit" required>
+          </label>
+
+          <label for="interest_rate" class="block">
+            <span class="text-gray-700">Interest Rate</span>
+            <input type="number" id="interest_rate" name="interest_rate" class="form-input mt-1 block w-full" placeholder="Enter the interest rate" required>
+          </label>
+
+          <div class="flex items-center">
+            <input type="checkbox" id="acquired" name="acquired" class="form-checkbox">
+            <label for="acquired" class="ml-2 text-gray-700">Acquired</label>
+          </div>
+
+          <button type="submit" class="btn btn-primary mt-4">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
